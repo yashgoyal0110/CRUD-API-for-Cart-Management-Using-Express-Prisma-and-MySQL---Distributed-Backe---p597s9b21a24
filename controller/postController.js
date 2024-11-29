@@ -1,6 +1,5 @@
 const { prisma } = require("../db/config");
 const addProduct = async (req, res) => {
-  console.log("postController");
   const { userId, productId, count } = req.body;
   if (!userId || !productId || !count) {
     return res.status(404).json({
