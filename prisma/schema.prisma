@@ -12,8 +12,6 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
-
-
 model Cart {
   cartId    Int     @id @default(autoincrement())
   userId    Int

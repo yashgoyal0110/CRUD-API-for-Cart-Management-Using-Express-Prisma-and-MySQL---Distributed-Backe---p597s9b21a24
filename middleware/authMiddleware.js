@@ -1,5 +1,5 @@
-const { API_AUTH_KEY } = require("./authkey");
-
+const dotenv = require('dotenv')
+dotenv.config()
 const authMiddleware = (req, res, next) => {
   const apiAuthKey = req.headers["apiauthkey"];
 
@@ -9,7 +9,7 @@ const authMiddleware = (req, res, next) => {
     });
   }
 
-  if (apiAuthKey !== API_AUTH_KEY) {
+  if (apiAuthKey !== process.env.API_AUTH_KEY) {
     return res.status(403).json({
       error: "Failed to authenticate apiauthkey",
     });
