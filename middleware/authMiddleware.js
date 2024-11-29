@@ -1,7 +1,6 @@
 const { API_AUTH_KEY } = require("./authkey");
 
 const authMiddleware = (req, res, next) => {
-    console.log(req.headers);
   const apiAuthKey = req.headers["apiauthkey"];
 
   if (!apiAuthKey) {
